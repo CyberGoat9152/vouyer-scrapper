@@ -9,7 +9,7 @@ from utils.zipData import zipData
 	Download chrome version: https://chromedriver.chromium.org/downloads
 """
 
-PATH = './drive/chromedriver'
+PATH = './drive/msedgedriver'
 
 def loadTargets():
 	resp = []
@@ -24,8 +24,7 @@ def loadTargets():
 if __name__ == '__main__':
 	mock = 'https://www.google.com/search?q=cute+kitten&sxsrf=ALiCzsb_lp3AZQSXulZvAzB14U-0n04WHw:1663684824805&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiDpID4zKP6AhXNpJUCHb3vBlIQ_AUoAXoECAIQAw&biw=960&bih=417&dpr=1'
 	targets = loadTargets()
-
-	wd = webdriver.Chrome(executable_path=PATH)
+	wd = webdriver.Chrome()
 	for target in targets:
 		processUrl(wd= wd, delay=0.2, url= target)
 		print('='*50 +'\n\t\tResizing Process\n'+'='*50)

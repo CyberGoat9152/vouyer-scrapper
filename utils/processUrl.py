@@ -36,8 +36,8 @@ def processUrl(wd, delay, url):
 				if image.get_attribute('data-src') and 'http' in image.get_attribute('data-src'):
 					image_urls.append(image.get_attribute('data-src'))
 					download_image(tag='http', url_content= image.get_attribute('data-src'))
-			# If already download 95% images in page or finish the task		
-			if (len(image_urls) >= max_images):
+			# If already download 80% images in page or finish the task		
+			if (len(image_urls) >= int(max_images*0.8)):
 				attempts+=1
 				break
 		# If already finish the job or don't have more images exit
